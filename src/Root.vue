@@ -4,12 +4,13 @@ import LayoutDefault from './layouts/default.vue'
 import LayoutAuth from './layouts/auth.vue'
 import { computed } from 'vue';
 const route = useRoute();
+
 const currentMeta = computed(()=>route.meta.layout || "default")
 const layoutMap = {
   default: LayoutDefault,
   auth: LayoutAuth
 }
-const VNodeLayout = computed(() => layoutMap[currentMeta.value as 'default' | 'auth']);
+const VNodeLayout = computed(() => layoutMap[currentMeta.value as string] || "default");
 </script>
 
 <template>
