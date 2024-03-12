@@ -5,4 +5,6 @@ import router from './router'
 
 const app = createApp(Root)
 app.use(router)
-app.mount('#root')
+router.isReady().then(()=>{
+    app.mount('#root')
+})
