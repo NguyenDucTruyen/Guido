@@ -9,7 +9,7 @@ const layoutMap = {
   default: LayoutDefault,
   auth: LayoutAuth
 }
-const VNodeLayout = computed(()=> layoutMap[currentMeta.value] )
+const VNodeLayout = computed(() => layoutMap[currentMeta.value as 'default' | 'auth']);
 </script>
 
 <template>
