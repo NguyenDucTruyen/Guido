@@ -6,7 +6,7 @@ import { computed } from 'vue';
 const route = useRoute();
 
 const currentMeta = computed(()=>route.meta.layout || "default")
-const layoutMap = {
+const layoutMap: any = {
   default: LayoutDefault,
   auth: LayoutAuth
 }
